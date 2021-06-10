@@ -1,0 +1,274 @@
+<!-- $top$ -->
+Content-type: text/html
+Expires: 0
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Quote Search</title>
+
+<link rel="icon" type="image/png" href="/applications/pricing/images/fav.ico" />
+
+<link rel="stylesheet" href="/applications/_globalSource/CSS/normalize.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/_globalSource/CSS/xpoStyle.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/Pricing/CSS/grids.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/Pricing/CSS/search.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/Pricing/CSS/custSearch.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/Pricing/CSS/contSearch.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/Pricing/CSS/tabs.css" type="text/css" media="screen"/>
+<!--link rel="stylesheet" href="/applications/Pricing/CSS/slick.grid.css" type="text/css" media="screen"/-->
+<link rel="stylesheet" href="/applications/Pricing/CSS/quoteSearch.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/Pricing/CSS/help.css" type="text/css" media="screen"/>
+
+<!--link rel="stylesheet" href="/applications/_globalSource/javascript/SlickGrid/controls/slick.pager.css" type="text/css" media="screen"/-->
+<link rel="stylesheet" href="/applications/_globalSource/javascript/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css" media="screen" />
+<!--link rel="stylesheet" href="/applications/_globalSource/javascript/SlickGrid/controls/slick.columnpicker.css" type="text/css" media="screen" /-->
+<link rel="stylesheet" href="/applications/_globalSource/javascript/fancyBox-master/source/jquery.fancybox.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="/applications/_globalSource/Javascript/tooltipster-master/css/tooltipster.css">
+<link rel="stylesheet" href="/applications/_globalSource/Javascript/tooltipster-master/css/themes/tooltipster-light.css">
+<link rel="stylesheet" href="/applications/_globalSource/Javascript/DataTables-1.10.16/datatables.css">
+<!--link rel="stylesheet" href="/applications/_globalSource/Javascript/DataTables-1.10.4/extensions/TableTools/css/dataTables.tableTools.css"-->
+<link rel="stylesheet" href="/applications/_globalSource/CSS/jquery.multiselect.css" type="text/css" media="screen"/>
+
+<script src="/applications/_globalSource/javascript/jquery-3.3.1.min.js"></script>
+<script src="/applications/_globalSource/javascript/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<!--script src="/applications/_globalSource/javascript/SlickGrid/lib/jquery.event.drag-2.2.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/lib/jquery.event.drop-2.2.js"></script-->
+
+<script src="/applications/_globalSource/javascript/DataTables-1.10.16/datatables.js"></script>
+<!--script src="/applications/_globalSource/javascript/DataTables-1.10.4/extensions/TableTools/js/dataTables.tableTools.js"></script-->
+<script src="/applications/_globalSource/javascript/jszip/dist/jszip.min.js"></script>
+
+<!--script src="/applications/_globalSource/javascript/SlickGrid/slick.core.js"></script>
+<script src="/applications/Pricing/javascript/slick.formatters.new.js"></script>
+<script src="/applications/Pricing/javascript/slick.editors.new.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/slick.grid.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/slick.dataview.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/controls/slick.columnpicker.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/controls/slick.pager.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/plugins/slick.rowselectionmodel.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/plugins/slick.cellrangedecorator.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/plugins/slick.cellrangeselector.js"></script>
+<script src="/applications/_globalSource/javascript/SlickGrid/plugins/slick.autotooltips.js"></script-->
+<script src="/applications/_globalSource/javascript/fancyBox-master/source/jquery.fancybox.js"></script>
+<script src="/applications/_globalSource/javascript/tooltipster-master/js/jquery.tooltipster.min.js"></script>
+<script src="/applications/_globalSource/javascript/autosize-master/jquery.autosize.min.js"></script>
+<script src="/applications/_globalSource/javascript/mousetrap.min.js"></script>
+<script src="/applications/_globalSource/Javascript/jquery.multiselect.js"></script>
+
+<script src="/applications/_globalSource/javascript/heartcode-canvasloader.js"></script>
+<script src="/applications/_globalSource/javascript/moment.min.js"></script>
+<script src="/applications/_globalSource/javascript/utility.js"></script>
+
+<script src="/applications/Pricing/javascript/ajax.js"></script>
+<script src="/applications/Pricing/javascript/globalVars.js"></script>
+<script src="/applications/Pricing/javascript/quoteSearchui.js"></script>
+<script src="/applications/Pricing/javascript/quoteSearchGeoSearch.js"></script>
+<script src="/applications/Pricing/javascript/customerSearch.js"></script>
+<script src="/applications/Pricing/javascript/contactSearch.js"></script>
+<script src="/applications/Pricing/javascript/searchShortcuts.js"></script>
+<script src="/applications/Pricing/javascript/borderCities.js"></script>
+<script src="/applications/Pricing/Javascript/laneUsers.js"></script>
+
+<script type="text/javascript">
+	var currentUser = "<!-- %currentuser% -->";
+
+	$(document).ready(function () {
+		setup();
+		setMouseTrap();
+	});
+</script>
+
+</head>
+<!-- autocomplete="newpassword", and name="fake..." have been added to input fields to disable the browser auto complete feature -->
+<body>
+	<div id="header">
+		<div id="logo"></div>
+        <h2>Quote Search</h2>
+        <div id="newButton">+ New Quote</div>
+		<div id="headerControls">
+			<input id="searchProposal" class="entryBox" placeholder="Enter Proposal" name="searchProposal" type="text" autocomplete="new-password"/>
+            <div id="viewButton" class="button searchButton">View</div>
+            <div id="helpButton" class="button" href="#helpForm"></div>
+		</div>
+	</div>
+
+    <div id="bodyContainer">
+        <div id="searchBlock">
+            <div id="loadSearchTab">
+                <!--input id="useLoad" class="entryBox" placeholder="Search via Load Number" name="useLoad" type="text"/-->
+                <div id="loadFlipper" class="selectionFlipper">
+                    <div class="flipperTrap">
+                        <input id="useLoad" class="entryBox" placeholder="Search via Load Number" name="useLoad" type="text" autocomplete="new-password"/>
+                        <div id="loadSelection" class="selectedListItem">
+                            <span></span>
+                            <div class="removeSelectedItem"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--div class="searchSectionHeader">Load Number</div>
+            <div id="quoteSection" class="searchSection">
+                <label for="useLoad">Load:</label>
+                <div id="loadFlipper" class="selectionFlipper">
+                    <div class="flipperTrap">
+                        <input id="useLoad" class="entryBox" placeholder="Number" name="useLoad" type="text"/>
+                        <div id="loadSelection" class="selectedListItem">
+                            <span></span>
+                            <div class="removeSelectedItem"></div>
+                        </div>
+                    </div>
+                </div>
+            </div-->
+
+            <div class="searchSectionHeader">Quote</div>
+            <div id="quoteSection" class="searchSection">
+                <label for="searchCustomer">Customer:</label>
+                <div id="customerFlipper" class="selectionFlipper">
+                    <div class="flipperTrap">
+                        <input id="searchCustomer" name="searchCustomer" type="text" placeholder="Name or ID" autocomplete="new-password"/>
+                        <div id="customerSelection" class="selectedListItem">
+                            <span></span>
+                            <div class="removeSelectedItem"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul id="custSearchList" class="custSearchResults" tabIndex="-1"></ul>
+
+                <label for="searchContact">Contact:</label>
+                <div id="contactFlipper" class="selectionFlipper">
+                    <div class="flipperTrap">
+                        <input id="searchContact" name="searchContact" type="text" placeholder="Contact Name" autocomplete="new-password"/>
+                        <div id="contactSelection" class="selectedListItem">
+                            <span></span>
+                            <div class="removeSelectedItem"></div>
+                        </div>
+                    </div>
+                </div>
+                <ul id="contSearchList" class="contSearchResults" tabIndex="-1"></ul>
+            </div>
+
+            <div class="searchSectionHeader">Lane</div>
+            <div id="laneSection" class="searchSection">
+
+                <label for="searchOrigin">Origin:</label>
+                <div id="originFlipper" class="selectionFlipper">
+                    <div class="flipperTrap">
+                        <input id="searchOrigin" name="searchOrigin" class="entryBox" placeholder="City/ZIP" maxlength="60" type="text" autocomplete="new-password"/>
+                        <div id="originSelection" class="selectedListItem">
+                            <span></span>
+                            <div class="removeSelectedItem"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="searchDestn">Destination:</label>
+                <div id="destFlipper" class="selectionFlipper">
+                    <div class="flipperTrap">
+                        <input id="searchDestn" class="entryBox" placeholder="City/ZIP" maxlength="60" type="text" autocomplete="new-password"/>
+                        <div id="destinationSelection" class="selectedListItem">
+                            <span></span>
+                            <div class="removeSelectedItem"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="searchLaneType">Type / Work Flow Status:</label>
+                <select  id=searchLaneType class="laneType" multiple="multiple">
+
+                    <option value="I">Inquiry</option>
+                    <option value="P">Proposal</option>
+                    <option value="S">Spot</option>
+                    <option value="B">Bid</option>
+                    <option value="R">Review</option>
+                </select>
+                <select  id=searchWorkFlowStatus class="workFlowStatus" multiple="multiple">
+
+                </select>
+
+                <label for="searchUserType">Users:</label>
+                <select  id=searchUserType class="laneType">
+                    <option value="">All</option>
+                </select>
+                <select  id=searchUserProfile class="workFlowStatus">
+                    <option value="">All</option>
+                </select>
+
+                <ul id="geoSearchList" class="searchResults">
+                </ul>
+
+                <div class="dateBox">
+                    <label for="searchEffDate">Effective Range:</label>
+                    <div class="dateEntry">
+                        <input id="searchEffDate" class="editor-text effectiveDate" type="text" name="fakeEffective" placeholder="Start" autocomplete="new-password">
+                    </div>
+
+                    <div class="dateEntry">
+                        <input id="searchExpDate" class="editor-text expirationDate" type="text" name="fakeExpiration" placeholder="End" autocomplete="new-password">
+                    </div>
+                </div>
+            </div>
+
+            <div class="searchSectionHeader">Entry</div>
+            <div id="entrySection" class="searchSection">
+                <label for="searchByUser">Entered By:</label>
+                <input id="searchByUser" name="fakesearchby" class="entryBox" placeholder="User ID" maxlength="10" type="text" autocomplete="new-password"/>
+
+                <div class="dateBox">
+                    <label for="searchEntryDate">Entered Range:</label>
+                    <div class="dateEntry">
+                        <input id="searchEntryBDate" class="editor-text entryDate" type="text" name="fakesearchEntryB" placeholder="Start" autocomplete="new-password">
+                    </div>
+                    <div class="dateEntry">
+                        <input id="searchEntryEDate" class="editor-text entryDate" type="text" name="fakesearchEntryE" placeholder="End" autocomplete="new-password">
+                    </div>
+                </div>
+            </div>
+
+            <div id="searchControls">
+                <div id="searchButton" class="button searchButton" type="button">Search</div>
+                <a href="#" id="resetButton">Clear</a>
+            </div>
+        </div>
+        <div id="quoteTableContainer">
+            <div id="searchModeButton"><span></span></div>
+            <div id=quoteTableBlock>
+                 <table cellpadding="0" cellspacing="0" border="0" class="display responsive" id="quoteTable"></table>
+            </div>
+            <div id=quoteSummaryTableBlock>
+                <table cellpadding="0" cellspacing="0" border="0" class="display responsive" id="quoteSummaryTable"></table>
+            </div>
+            <div id="sLoading" class="spinner"></div>
+            <div id="sMask" class="mask"></div>
+        </div>
+    </div>
+
+	<div id="helpForm" style="display:none;">
+		<h2>Help</h2>
+		<div class="title"><span>Hotkeys</span></div>
+		<span>Press '~' followed by ...</span>
+		<ul class="hotkeyList">
+			<li class="heading">Actions</li>
+			<li><span class="hotkey">N</span><span class="hotkeyDesc">New</span></li>
+			<li><span class="hotkey">Q</span><span class="hotkeyDesc">Add new proposal from Search</span></li>
+			<li><span class="hotkey">X</span><span class="hotkeyDesc">Clear</span></li>
+
+			<li class="heading">Set Focus</li>
+			<li><span class="hotkey">C</span><span class="hotkeyDesc">Customer</span></li>
+			<li><span class="hotkey">M</span><span class="hotkeyDesc">Contact</span></li>
+			<li><span class="hotkey">O</span><span class="hotkeyDesc">Origin</span>
+			<li><span class="hotkey">D</span><span class="hotkeyDesc">Destination</span>
+			<li><span class="hotkey">F</span><span class="hotkeyDesc">Effective Date</span></li>
+			<li><span class="hotkey">Y</span><span class="hotkeyDesc">Type</span></li>
+			<li><span class="hotkey">P</span><span class="hotkeyDesc">Enter Proposal</span>
+			<li><span class="hotkey">U</span><span class="hotkeyDesc">Entry User</span>
+			<li><span class="hotkey">R</span><span class="hotkeyDesc">Entry Date</span>
+			<li><span class="hotkey">L</span><span class="hotkeyDesc">Load Number</span>
+		</ul>
+	</div>
+
+<!-- $end$ -->
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+<script src="/applications/_globalSource/javascript/jquery-2.1.0.min.js"></script>
+<script>
+function postit() {
+var url = "pqxml.pgm?func=updHeader";
+var postdata = '<request>' +
+	'<header><id>0</id><CustPrefix>Y</CustPrefix><CustBase>00268</CustBase><CustSuffix>003</CustSuffix><Contactid>1</Contactid><Custid>0</Custid><QuoteNum /></header>' +
+	'<lane><id>0</id><number>1</number><quotetype>I</quotetype><effdate>2014-05-16</effdate><expdate>2014-08-15</expdate>' +
+	'<Geography>' +
+	'<point><type>ORG</type><source>CT</source><state>MO</state><cityid>25243</cityid><countyid>1</countyid><zipid /><zone /></point>' +
+	'<point><type>SIT</type><source>CT</source><state>OK</state><cityid>69814</cityid><countyid>1</countyid><zipid /><zone /></point>' +
+	'<point><type>DST</type><source>CT</source><state>TX</state><cityid>45489</cityid><countyid>1</countyid><zipid /><zone /></point>' +
+	'</Geography>' +
+	'</lane>' +
+'</request>';
+
+alert(postdata);
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: postxml,
+			dataType: "xml",
+			success: function(xml) {
+						
+	alert('Success');
+					
+				
+			},
+			complete: function() {
+				
+			},
+			
+			error: function() {
+				alert('Cannot find CUSTdata');
+			   
+				
+				
+			}
+		});						
+				
+}
+	
+			
+</script>
+
+</head>
+<body>
+<input id="button1" type="button" value="Post Data" onClick="postit();">
+</body>
+</html>

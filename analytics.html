@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no"/>
+
+        <title>XPO Truckload Pricing Analytics</title>
+        
+        <link rel="icon" type="image/png" href="/applications/pricing/images/fav.ico?v=2" />
+
+        <!-- Javascript Tools CSS -->
+        <link rel="stylesheet" type="text/css"
+              href="/applications/_globalSource/javascript/chartist-js/chartist.min.css">
+        <!-- Global Standard CSS -->
+        <link rel="stylesheet" href="/applications/_globalSource/CSS/normalize.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="/applications/_globalSource/CSS/xpoStyle.css" type="text/css" media="screen"/>
+
+        <!-- Project CSS -->
+        <link rel="stylesheet" href="../CSS/globalLayout.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="../CSS/main.css" type="text/css" media="screen"/>
+
+
+        <!-- Javascript Tools -->
+        <script src="/applications/_globalSource/javascript/jquery-3.0.0.min.js"></script>
+
+        <!-- Global Standard Javascript -->
+        <script src="/applications/_globalSource/Javascript/utility.js"></script>
+
+
+        <!-- Project Javascript -->
+        <script src="../Javascript/globalUI.js"></script>
+
+        <script type="text/javascript">    
+
+            $(document).ready(function () {
+                setup();
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <div id="originZone" class="analyticBox">
+            <h3 class="title">Origin</h3>
+            
+            <div class="ORHead">
+                <span id="originOR" class="value"></span><label>OR</label>
+            </div>
+            
+            <div class="rateBand">
+                <p>
+                    <label>Inbound RPLM</label><span id="originIBRPLM" class="value"></span>
+                </p>
+                <p>
+                    <label>Outbound RPLM</label><span id="originOBRPLM" class="value"></span>
+                </p>
+            </div>
+            
+            <div class="gaugeBlock">
+                <h3>Load Balance</h3>
+                <div id="originLBFGauge" class="ct-chart ct-perfect-fourth lbfGauge"></div>
+                <div id="originLBFValue"></div>
+                <div id="originLBFBreakdown">
+                    <p>
+                        <label>Inbound</label><span id="originIBLBF" class="value"></span>
+                    </p>
+                    <p>
+                        <label>Outbound</label><span id="originOBLBF" class="value"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="destZone" class="analyticBox">
+            <h3 class="title">Destination</h3>
+            
+            <div class="ORHead">
+                <span id="destOR" class="value"></span><label>OR</label>
+            </div>
+
+            <div class="rateBand">
+                <p>
+                    <label>Inbound RPLM</label><span id="destIBRPLM" class="value"></span>
+                </p>
+                <p>
+                    <label>Outbound RPLM</label><span id="destOBRPLM" class="value"></span>
+                </p>
+            </div>
+
+            <div class="gaugeBlock">
+                <h4>Load Balance</h4>
+                <div id="destLBFGauge" class="ct-chart ct-perfect-fourth lbfGauge"></div>
+                <div id="destLBFValue"></div>
+                <div id="destLBFBreakdown">
+                    <p>
+                        <label>Inbound</label><span id="destIBLBF" class="value"></span>
+                    </p>
+                    <p>
+                        <label>Outbound</label><span id="destOBLBF" class="value"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="custCost" class="analyticBox">
+            <h3 class="title">Cost</h3>
+            
+            <div class="ORHead">
+                <p>
+                    <span id="custOR" class="value"></span><label>OR</label>
+                </p>
+                <p>
+                    <span id="cust3LegOR" class="value"></span><label>3-Leg OR</label>
+                </p>
+            </div>
+            
+            <div class="rateVcost">
+                <div>
+                    <label>Rate <span class="subLabel left">per loaded mile</span></label>
+                    <span id="custRPLM"></span>
+                </div>
+                <div id="custNetGain"></div>
+                <div>
+                    <label>Cost <span class="subLabel right">per loaded mile</span></label>
+                    <span id="custRPLM"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

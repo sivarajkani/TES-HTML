@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+
+
+<table id="email" style="width: 600px; text-align: center; margin: auto; border-collapse: collapse;">
+    <tr id="header">
+        <td style="border: 1px solid black;">
+            <h1 style="margin: 5px;">Con-way</h1>
+            <p style="font-size: 120%; font-weight: bold; margin: 5px; margin-top: 5px;">Spot Pricing Agreement</p>
+            <table style="width: 400px; margin: auto;">
+                <tr>
+                    <td style="text-align: right; font-weight: bold; width: 100px;">Quote #:</td>
+                    <td style="text-align: left;">quoteNumberVar</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold; width: 100px;">Customer #:</td>
+                    <td style="text-align: left;">customerNumberVar</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold; width: 100px;">Customer:</td>
+                    <td style="text-align: left;">customerVar</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr id="spacer" style="height: 20px;"></tr>
+    <tr class="lane" style="padding-top: 2em; margin-top: 15px;">
+        <td style="border: 1px solid black; padding-top: 1em; margin-top: 2em;">
+            <table id="laneInfo" style="margin: auto;">
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Lane #:</td>
+                    <td style="text-align: left;">var</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Origin:</td>
+                    <td style="text-align: left; width: 200px;">Joplin, MO</td>
+                    <td style="text-align: right; font-weight: bold;">Effective Date:</td>
+                    <td style="text-align: left;">07/03/14</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Border Crossing:</td>
+                    <td style="text-align: left; width: 200px;">var</td>
+                    <td style="text-align: right; font-weight: bold;">Expiration Date:</td>
+                    <td style="text-align: left;">10/03/14</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Destination:</td>
+                    <td style="text-align: left; width: 200px;">var</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <table id="rateChart" style="margin: auto; text-align: left; width: 600px; padding-top: 15px;">
+                <tr>
+                    <td style="font-weight: bold;">Charge Type</td>
+                    <td style="font-weight: bold;">Quantity</td>
+                    <td style="font-weight: bold;">UOM</td>
+                    <td style="font-weight: bold;">Rate</td>
+                    <td style="font-weight: bold;">Extended Rate</td>
+                </tr>
+                <tr>
+                    <td>MEXICAN INTERLINE</td>
+                    <td>99,999</td>
+                    <td>MLS</td>
+                    <td>9,999.99</td>
+                    <td>999,999.99</td>
+                </tr>
+                <tr>
+                    <td>MEXICAN INTERLINE</td>
+                    <td>99,999</td>
+                    <td>MLS</td>
+                    <td>9,999.99</td>
+                    <td>999,999.99</td>
+                </tr>
+                <tr>
+                    <td>MEXICAN INTERLINE</td>
+                    <td>99,999</td>
+                    <td>MLS</td>
+                    <td>9,999.99</td>
+                    <td>999,999.99</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="rateTotalLabel" style="text-align: right; font-weight: bold;">Total Charge</td>
+                    <td id="rateTotal" style="font-weight: bold;">999,999.99</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr id="laneFooter">
+        <td>
+            <p style="margin: 0px; padding: 0px; text-align: left;">
+                *Fuel Surcharge is updated each Monday and is subject to change.
+            </p>
+        </td>
+    </tr>
+    <tr id="spacer" style="height: 20px;"></tr>
+    <tr class="lane" style="padding-top: 2em; margin-top: 15px;">
+        <td style="border: 1px solid black; padding-top: 1em; margin-top: 2em;">
+            <table id="laneInfo" style="margin: auto;">
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Lane #:</td>
+                    <td style="text-align: left;">var</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Origin:</td>
+                    <td style="text-align: left; width: 200px;">Joplin, MO</td>
+                    <td style="text-align: right; font-weight: bold;">Effective Date:</td>
+                    <td style="text-align: left;">07/03/14</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Border Crossing:</td>
+                    <td style="text-align: left; width: 200px;">var</td>
+                    <td style="text-align: right; font-weight: bold;">Expiration Date:</td>
+                    <td style="text-align: left;">10/03/14</td>
+                </tr>
+                <tr>
+                    <td style="text-align: right; font-weight: bold;">Destination:</td>
+                    <td style="text-align: left; width: 200px;">var</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <table id="rateChart" style="margin: auto; text-align: left; width: 600px;">
+                <tr>
+                    <td style="font-weight: bold;">Charge Type</td>
+                    <td style="font-weight: bold;">Quantity</td>
+                    <td style="font-weight: bold;">UOM</td>
+                    <td style="font-weight: bold;">Rate</td>
+                    <td style="font-weight: bold;">Extended Rate</td>
+                </tr>
+                <tr>
+                    <td>MEXICAN INTERLINE</td>
+                    <td>99,999</td>
+                    <td>MLS</td>
+                    <td>9,999.99</td>
+                    <td>999,999.99</td>
+                </tr>
+                <tr>
+                    <td>MEXICAN INTERLINE</td>
+                    <td>99,999</td>
+                    <td>MLS</td>
+                    <td>9,999.99</td>
+                    <td>999,999.99</td>
+                </tr>
+                <tr>
+                    <td>MEXICAN INTERLINE</td>
+                    <td>99,999</td>
+                    <td>MLS</td>
+                    <td>9,999.99</td>
+                    <td>999,999.99</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="rateTotalLabel" style="text-align: right; font-weight: bold;">Total Charge</td>
+                    <td id="rateTotal" style="font-weight: bold;">999,999.99</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr id="laneFooter">
+        <td>
+            <p style="margin: 0px; padding: 0px; text-align: left;">
+                *Fuel Surcharge is updated each Monday and is subject to change.
+            </p>
+        </td>
+    </tr>
+    <tr id="spacer" style="height: 20px;"></tr>
+    <tr id="pageFooter">
+        <td>
+            <p style="margin: 0px; padding: 0px; text-align: left;">
+               Note: Rates will apply only for the time period designated 
+               (and/or carriers load identification number if applicable)
+               and only for the account shown above. Rates and/or charges 
+               hereto are individually determined and are subject to the 
+               attached terms and conditions.
+            </p>
+        </td>
+    </tr>
+</table>
+
+</body>
